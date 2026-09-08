@@ -3,3 +3,254 @@
 @import "tailwindcss/utilities.css";
 
 @import "nativewind/theme";
+
+@theme static {
+    /* -- Surfaces ------------------------------------------------------- */
+    --color-bg-app: #0d0806;
+    --color-bg-well: #100b08;
+    --color-bg-sunken: #14100c;
+    --color-bg-card: #191310;
+    --color-bg-sheet: #1c1511;
+    --color-bg-chip: #1b1510;
+    --color-bg-control: #241c15;
+
+    /* -- Borders -------------------------------------------------------- */
+    --color-bd-hair: #241c15;
+    --color-bd-card: #2b211a;
+    --color-bd-input: #33271d;
+    --color-bd-control: #3a2e22;
+    --color-bd-dashed: #4a3b2a;
+
+    /* -- Overlays ------------------------------------------------------- */
+    --color-bar: rgba(18, 13, 10, 0.94);
+    --color-scrim: rgba(6, 4, 3, 0.7);
+    --color-toast-bg: rgba(28, 21, 17, 0.96);
+
+    /* -- Final-bill paper gradient -------------------------------------- */
+    --color-paper-a: #2a2118;
+    --color-paper-b: #20180f;
+
+    /* -- Text ----------------------------------------------------------- */
+    --color-t1: #f7f2ec;
+    --color-t2: #d8cec4;
+    --color-t3: #a99c90;
+    --color-t4: #71675e;
+    --color-t5: #5c534b;
+
+    /* -- Amber ---------------------------------------------------------- */
+    --color-accent: #e9b935;
+    --color-accent-line: #e9b935;
+    --color-accent-text: #e9b935;
+
+    /* Selected-state tints. 7-16% in dark, 16-28% in light — a wash that
+       reads against near-black vanishes against off-white. */
+    --color-am07: rgba(233, 185, 53, 0.07);
+    --color-am10: rgba(233, 185, 53, 0.1);
+    --color-am12: rgba(233, 185, 53, 0.12);
+    --color-am16: rgba(233, 185, 53, 0.16);
+
+    /* Selected-state hairlines. Light uses the darkened amber #C99A1B. */
+    --color-am-line18: rgba(233, 185, 53, 0.18);
+    --color-am-line40: rgba(233, 185, 53, 0.4);
+    --color-am-line50: rgba(233, 185, 53, 0.5);
+
+    /* Selected chip — both halves swap, so the pill stays the darkest thing
+       on screen in either theme. */
+    --color-chip-on-bg: #f7f2ec;
+    --color-chip-on-ink: #170f06;
+
+    /* -- Mint = verified (never decorative, never a person colour) ------- */
+    --color-mint: #45d97f;
+    --color-mint-text: #8fd9ac;
+    --color-mint-tint: rgba(69, 217, 127, 0.09);
+    --color-mint-line: rgba(69, 217, 127, 0.3);
+
+    /* -- Red = destructive (never decorative, never a person colour) ----- */
+    --color-danger: #e9614b;
+    --color-danger-text: #f08a82;
+    --color-danger-soft: #f0a79a;
+    --color-danger-tint: rgba(233, 97, 75, 0.1);
+    --color-danger-line: #6b2320;
+    --color-danger-line-a: rgba(233, 97, 75, 0.35);
+    --color-swipe-bg: #4a1512;
+    --color-swipe-text: #ffd9d5;
+
+    /* -- Person palette ------------------------------------------------- */
+    --color-person-1: #e9b935; /* Host only  */
+    --color-person-2: #4fa8e9;
+    --color-person-3: #f0913c;
+    --color-person-4: #ee68b4;
+    --color-person-5: #a97bee;
+    --color-person-6: #7bd1e9;
+
+    /* Paired dark ink for the initial drawn on each fill. */
+    --color-person-1-ink: #241802;
+    --color-person-2-ink: #0b1620;
+    --color-person-3-ink: #2a1403;
+    --color-person-4-ink: #25081a;
+    --color-person-5-ink: #170a28;
+    --color-person-6-ink: #061c22;
+
+    /* -- Shadows -------------------------------------------------------- */
+    /* Shadows change hue, not alpha: warm brown in light, because black on a
+       warm off-white reads grey and makes the surface look dirty. */
+    --color-sh-a: rgba(0, 0, 0, 0.5);
+    --color-sh-b: rgba(0, 0, 0, 0.55);
+    --color-sh-c: rgba(0, 0, 0, 0.6);
+
+    --shadow-a: 0 6px 16px var(--color-sh-a); /* resting card lift */
+    --shadow-b: 0 14px 34px var(--color-sh-b); /* tab island, floating bars */
+    --shadow-c: 0 22px 48px var(--color-sh-c); /* sheets over a scrim */
+
+    /* -- Typography ----------------------------------------------------- */
+    /* One token per face, named by its PostScript name — which is also the
+       filename, so iOS and Android resolve identically.
+
+       Do NOT pair these with font-weight utilities. Figtree's Medium,
+       SemiBold and ExtraBold files each declare their own legacy family
+       ("Figtree SemiBold", not "Figtree"), so `font-sans` + `font-semibold`
+       silently synthesises a fake weight on iOS instead of loading the real
+       face. Pick the face; leave the weight alone.
+
+       Figtree Light, LightItalic and Black are in assets/fonts/ but are not
+       embedded — no role in SPEC uses them. */
+    --font-sans: Figtree-Regular; /* default face for unstyled text */
+    --font-ui-400: Figtree-Regular; /* supporting copy */
+    --font-ui-500: Figtree-Medium; /* meta */
+    --font-ui-600: Figtree-SemiBold; /* row titles */
+    --font-ui-700: Figtree-Bold; /* buttons, pill labels */
+    --font-ui-800: Figtree-ExtraBold; /* headings */
+    --font-money-400: SpaceMono-Regular; /* amount sub-lines */
+    --font-money-700: SpaceMono-Bold; /* totals, row amounts */
+
+    --text-title: 30px; /* font-ui-800 */
+    --text-title--line-height: 1.1;
+    --text-title--letter-spacing: -0.75px;
+
+    --text-headline: 19px; /* font-ui-700 */
+    --text-headline--line-height: 1.25;
+    --text-headline--letter-spacing: -0.19px;
+
+    --text-row: 15.5px; /* font-ui-600 */
+    --text-row--line-height: 1.2;
+
+    --text-body: 14px; /* font-ui-400, on --t3 */
+    --text-body--line-height: 1.45;
+
+    --text-label: 11px; /* font-ui-700, uppercase, on --t4 */
+    --text-label--letter-spacing: 1.76px;
+
+    --text-total: 34px; /* font-money-700, tabular */
+    --text-total--line-height: 1;
+    --text-total--letter-spacing: -0.68px;
+
+    --text-amount: 16px; /* font-money-700, tabular */
+    --text-amount-sub: 11px; /* font-money-400, on --t3 */
+
+    /* -- Shape ---------------------------------------------------------- */
+    --radius-swatch: 11px; /* swatches, small tiles */
+    --radius-row: 15px; /* list rows, buttons */
+    --radius-card: 18px; /* cards, paywall blocks */
+    --radius-island: 26px; /* floating tab island */
+    --radius-pill: 999px; /* chips, avatars */
+}
+
+/* ---------------------------------------------------------------------------
+   Light mode — the same names, re-pointed. Only colour changes here; type,
+   shape and shadow geometry are shared.
+--------------------------------------------------------------------------- */
+
+@media (prefers-color-scheme: light) {
+    :root {
+        /* -- Surfaces --------------------------------------------------- */
+        /* Cards go to pure #FFFFFF deliberately, so they lift off the base
+           without a shadow. */
+        --color-bg-app: #f7f3eb;
+        --color-bg-well: #efe8dc;
+        --color-bg-sunken: #f2ece1;
+        --color-bg-card: #ffffff;
+        --color-bg-sheet: #ffffff;
+        --color-bg-chip: #f5f0e6;
+        --color-bg-control: #f0eadf;
+
+        /* -- Borders ---------------------------------------------------- */
+        --color-bd-hair: #ebe3d5;
+        --color-bd-card: #e5dccc;
+        --color-bd-input: #dcd2c0;
+        --color-bd-control: #dacfbc;
+        --color-bd-dashed: #c7bba4;
+
+        /* -- Overlays --------------------------------------------------- */
+        --color-bar: rgba(247, 243, 235, 0.94);
+        --color-scrim: rgba(46, 35, 22, 0.38);
+        --color-toast-bg: rgba(255, 255, 255, 0.98);
+
+        /* -- Final-bill paper gradient ---------------------------------- */
+        --color-paper-a: #e9e0cf;
+        --color-paper-b: #dbd0ba;
+
+        /* -- Text ------------------------------------------------------- */
+        --color-t1: #191310;
+        --color-t2: #443c33;
+        --color-t3: #6c6156;
+        --color-t4: #8a7f72;
+        --color-t5: #a2978a;
+
+        /* -- Amber ------------------------------------------------------ */
+        --color-accent: #e9b935;
+        --color-accent-line: #c99a1b;
+        --color-accent-text: #8c6104;
+
+        --color-am07: rgba(233, 185, 53, 0.16);
+        --color-am10: rgba(233, 185, 53, 0.21);
+        --color-am12: rgba(233, 185, 53, 0.24);
+        --color-am16: rgba(233, 185, 53, 0.28);
+
+        --color-am-line18: rgba(201, 154, 27, 0.3);
+        --color-am-line40: rgba(201, 154, 27, 0.55);
+        --color-am-line50: rgba(201, 154, 27, 0.65);
+
+        --color-chip-on-bg: #191310;
+        --color-chip-on-ink: #fff6e2;
+
+        /* -- Mint = verified -------------------------------------------- */
+        --color-mint: #2e9e5b;
+        --color-mint-text: #1d7a43;
+        --color-mint-tint: rgba(46, 158, 91, 0.1);
+        --color-mint-line: rgba(46, 158, 91, 0.34);
+
+        /* -- Red = destructive ------------------------------------------ */
+        --color-danger: #d4472f;
+        --color-danger-text: #b03a26;
+        --color-danger-soft: #b03a26;
+        --color-danger-tint: rgba(212, 71, 47, 0.09);
+        --color-danger-line: #e7b3a8;
+        --color-danger-line-a: rgba(212, 71, 47, 0.3);
+        --color-swipe-bg: #d4472f;
+        --color-swipe-text: #fff1ee;
+
+        /* -- Shadows ---------------------------------------------------- */
+        --color-sh-a: rgba(72, 54, 30, 0.14);
+        --color-sh-b: rgba(72, 54, 30, 0.16);
+        --color-sh-c: rgba(72, 54, 30, 0.2);
+    }
+}
+
+/* ---------------------------------------------------------------------------
+   nativewind/theme re-points --font-sans to the platform system face inside
+   `@media ios` / `@media android`, and that lands after @theme in the compiled
+   output — so it wins unless we claim it back here. Without this, unstyled
+   text falls back to San Francisco instead of Figtree.
+--------------------------------------------------------------------------- */
+
+@media ios {
+    :root {
+        --font-sans: Figtree-Regular;
+    }
+}
+
+@media android {
+    :root {
+        --font-sans: Figtree-Regular;
+    }
+}
