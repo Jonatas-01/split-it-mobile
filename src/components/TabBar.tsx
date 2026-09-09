@@ -13,13 +13,13 @@ const IoniconsBase = Ionicons as ComponentType<{
 const Icon = styled(IoniconsBase, { className: 'style' })
 
 const ICONS_NOTFOCUSED: Record<string, IoniconsIconName> = {
-    index: 'reader-outline',
+    index: 'home-outline',
     history: 'time-outline',
     account: 'person-outline',
 }
 
 const ICONS_FOCUSED: Record<string, IoniconsIconName> = {
-    index: 'reader',
+    index: 'home',
     history: 'time',
     account: 'person',
 }
