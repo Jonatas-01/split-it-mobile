@@ -24,13 +24,13 @@ const ICONS_FOCUSED: Record<string, IoniconsIconName> = {
     account: 'person',
 }
 
-const ICON_SIZE = 24
+const ICON_SIZE = 28
 
 export function TabBar({ state, descriptors, navigation, insets }: BottomTabBarProps) {
     return (
         <View
             className="flex-row border-t border-bd-hair bg-bar px-1 pt-2.5"
-            style={{ paddingBottom: insets.bottom + 10 }}
+            style={{ paddingBottom: insets.bottom }}
         >
             {state.routes.map((route, index) => {
                 const { options } = descriptors[route.key]
