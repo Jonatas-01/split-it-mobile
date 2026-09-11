@@ -5,7 +5,7 @@ import { SafeAreaView } from "react-native-safe-area-context"
 export default function App() {
     return (
             <View className="flex-1 bg-bg-app p-safe">
-                <Text className="text-title text-t1 font-ui-700">
+                <Text className="text-title text-t1 font-ui-800">
                     Welcome to Nativewind!
                 </Text>
                 <Link href="/(tabs)/account">
