@@ -1,6 +1,8 @@
 import { Link } from "expo-router";
 import { Pressable, Text, View } from "react-native";
 import { Icon } from "@/components/Icon";
+import HistoryCard from '@/components/HistoryCard';
+import { mockBills } from "@/services/mock/mockBill";
 
 /* Placeholder until AuthClient / SubscriptionClient are wired. */
 const FREE_SCANS_PER_MONTH = 2;
@@ -77,6 +79,27 @@ export default function Home() {
                     </Link>
                 </View>
 
+                <View className="mt-6">
+                    <View className="flex-row justify-between items-center">
+                        <Text className="text-body font-ui-700 text-t4">RECENT BILLS</Text>
+                        <Link href="/history" asChild>
+                            {mockBills.length > 1 ? (
+                                <Text className="text-body font-ui-700 text-accent-text">See all {mockBills.length}</Text>
+                            ) : (
+                                <Text className="text-body font-ui-500 text-t4">See bill</Text>
+                            )}
+                        </Link>
+                    </View>
+                    <View className="mt-4">
+                        {mockBills.length > 0 ? (
+                            mockBills.slice(0, 3).map((bill) => (
+                                <HistoryCard key={bill.id} bill={bill} />
+                            ))
+                        ) : (
+                            <Text className="text-body font-ui-500 text-t4">No recent bills</Text>
+                        )}
+                    </View>
+                </View>
             </View>
         </View>
     );
