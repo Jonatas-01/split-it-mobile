@@ -1,16 +1,6 @@
-import type { ComponentType } from 'react'
-import { Pressable, type StyleProp, Text, type TextStyle, View } from 'react-native'
-import { Ionicons, type IoniconsIconName } from '@react-native-vector-icons/ionicons'
-import { styled } from 'nativewind'
+import { Pressable, Text, View } from 'react-native'
 import type { BottomTabBarProps } from 'expo-router/build/react-navigation/bottom-tabs'
-
-const IoniconsBase = Ionicons as ComponentType<{
-    name: IoniconsIconName
-    size?: number
-    style?: StyleProp<TextStyle>
-}>
-
-const Icon = styled(IoniconsBase, { className: 'style' })
+import { Icon, type IoniconsIconName } from '@/components/Icon'
 
 const ICONS_NOTFOCUSED: Record<string, IoniconsIconName> = {
     index: 'home-outline',
