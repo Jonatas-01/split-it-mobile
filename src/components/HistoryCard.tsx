@@ -35,7 +35,6 @@ function formatMoney(amount: MinorUnits, currency: string) {
     return new Intl.NumberFormat(undefined, {
         style: "currency",
         currency,
-        minimumFractionDigits: 2,
     }).format(amount / 100);
 }
 
@@ -56,7 +55,7 @@ function Avatar({ person, stacked }: { person: Person; stacked: boolean }) {
             className={`w-9 h-9 rounded-pill items-center justify-center border-2 border-bg-card ${FILL[person.color]
                 } ${stacked ? "-ml-3" : ""}`}
         >
-            <Text className={`text-body font-ui-800 ${INK[person.color]}`}>
+            <Text className={`text-body font-ui-700 ${INK[person.color]}`}>
                 {initialOf(person.name)}
             </Text>
         </View>
@@ -88,7 +87,7 @@ export default function HistoryCard({ bill }: { bill: Bill }) {
             <View className="flex-1 gap-0.5">
                 <Text
                     numberOfLines={1}
-                    className="text-row font-ui-700 text-t1"
+                    className="text-row font-ui-600 text-t1"
                 >
                     {bill.restaurantName}
                 </Text>
